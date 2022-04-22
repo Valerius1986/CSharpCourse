@@ -1,0 +1,51 @@
+using System;
+
+namespace HomeWork1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // 1. Запросить имя пользователя. Вывести Hello, [имя пользователя].
+            // 1. Request a user name. Output Hello, [username].
+
+            Console.WriteLine("Enter your name:");
+            string userName = Console.ReadLine();
+            string sentence = $"Hello, {userName}.";
+            Console.WriteLine(sentence);
+            Console.WriteLine();
+
+            // 2. Запросить у пользователя два целых числа и сохранить в двух переменных. Вывести значения.
+            //Обменять значения переменных: например, если в переменной x было записано число 3, а в y число 5,
+            //сделать так, чтобы в y стало 3, а в x стало 5.Вывести значения после обмена.
+            // 2. Ask the user for two integers and store them in two variables. Output the values.
+            //Exchange the values of the variables: for example, if the x variable contains a number 3, and the y variable contains a number 5,
+            //make y become 3, and x becomes 5. Output the values after the exchange.
+
+            Console.WriteLine("Enter first number:");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter second number:");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"Your numbers is first = {num1} and second = {num2}");
+
+            int emptyNum = num1;
+            num1 = num2;
+            num2 = emptyNum;
+
+            Console.WriteLine($"Now your numbers is first = {num1} and second = {num2}");
+            Console.WriteLine();
+
+            // 3. Запросить у пользователя целое число. Вывести количество цифр числа. Например,
+            // в числе 156 - 3 цифры.
+            // 3. Ask the user for an integer number. Output the number of digits of the number. For example,
+            // the number 156 has 3 digits.
+
+            Console.WriteLine("Enter a number:");
+            string numUser = Console.ReadLine();
+            int count = numUser.Length;
+            Console.WriteLine($"In the number {numUser} - {count} digits");
+        }
+    }
+}
