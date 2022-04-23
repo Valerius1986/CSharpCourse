@@ -1,0 +1,49 @@
+using System;
+
+namespace Basics
+{
+    class Basics
+    {
+        static void Main(string[] args)
+        {
+            //Запросить у пользователя: фамилию, имя, возраст, вес, рост.
+            //Высчитать ИМТ(индекс массы тела) по формуле
+            //ИМТ = вес(кг) / (рост(м) * рост(м))
+            //Сформировать единую строку, в следующем формате:
+            //Your profile:
+            //Full Name: фамилия, имя
+            //Age: возраст
+            //Weight: вес
+            //Height: рост
+            //Body Mass Index: ИМТ
+            //Вывести сформированную строку на консоль.
+
+            Console.WriteLine("Давайте заполним ваш профиль.");
+            Console.WriteLine("Введите свою фамилию:");
+            string lastName = Console.ReadLine();
+            Console.WriteLine("Введите своё имя:");
+            string firstName = Console.ReadLine();
+            Console.WriteLine("Введите свой возраст:");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите свой вес в кг.:");
+            double weight = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите свой рост в метрах:");
+            double height = double.Parse(Console.ReadLine());
+
+            //Высчитываем ИМТ(индекс массы тела) по формуле
+            //ИМТ = вес(кг) / (рост(м) * рост(м))
+
+            double bodyMassIndex = weight / (height * height);
+
+            string profile =
+                $"Your profile:{Environment.NewLine}"
+                + $"Full Name: {lastName}, {firstName} {Environment.NewLine}"
+                + $"Age: {age} {Environment.NewLine}"
+                + $"Weight: {weight} {Environment.NewLine}"
+                + $"Height: {height} {Environment.NewLine}"
+                + $"Body Mass Index: {bodyMassIndex}";
+            Console.WriteLine(profile);
+
+        }
+    }
+}
