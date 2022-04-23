@@ -1,0 +1,38 @@
+using System;
+
+namespace HomeWork1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           //Запросить у пользователя два целочисленных значения и найти максимальное.
+            //Query the user for two integer values and find the maximum value.
+            Console.WriteLine("Enter two integers to compare.");
+            Console.WriteLine("Enter the first number:");
+            int firstNum = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the second number:");
+            int secondNum = int.Parse(Console.ReadLine());
+
+            if (firstNum > secondNum)
+            {
+                Console.WriteLine($"The number {firstNum} is greater than {secondNum}");
+            }
+            else if (firstNum < secondNum)
+            {
+                Console.WriteLine($"The number {firstNum} is less than {secondNum}");
+            }
+            else
+            {
+                Console.WriteLine($"The numbers {firstNum} and {secondNum} are equal");
+            }
+        }
+    
+
+    }
+
+    
+}
+ 
+        
