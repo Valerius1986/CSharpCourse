@@ -1,0 +1,44 @@
+using System;
+
+namespace HomeWork1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           //Числа фибоначчи описываются следующей последовательностью: 1, 1, 2, 3, 5, 8, 13, 21...
+            //Первые два числа -единицы.Все последующие числа вычисляются как сумма двух предыдущих.
+            //Задание: запросить у пользователя кол-во чисел Фибоначчи, которое он хотел бы сгенерировать(вычислить),
+            //и, собственно, произвести генерацию(вычисление). В процессе генерации записывать числа в массив.
+            //После генерации вывести вычисленные числа.
+            //Fibonacci numbers are described by the following sequence: 1, 1, 2, 3, 5, 8, 13, 21...
+            //The first two numbers are ones. All subsequent numbers are calculated as a sum of the previous two.
+            //Task: to ask user to generate how many Fibonacci numbers he wants to calculate,
+            //and, in fact, generate (calculate). During the generation process, write the numbers to an array.
+            //After generation, display calculated numbers.
+
+            Console.WriteLine("Enter the number of numbers to generate the Fibonacci sequence:");
+            int length = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            int[] numsFib = new int[length];
+            int prev = numsFib[0] = 0;
+            int next = numsFib[1] = 1;
+
+            for (int i = 2; i < numsFib.Length; i++)
+            {
+                int sum = prev + next;
+                numsFib[i] = sum;
+                prev = next;
+                next = sum;
+            }
+
+            foreach (var item in numsFib)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+
+    
+}
