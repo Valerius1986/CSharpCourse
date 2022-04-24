@@ -1,0 +1,56 @@
+using System;
+
+namespace HomeWork1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Запросить у пользователя не более 10 целых положительных чисел. Пользователь может
+            // прекратить приём чисел, введя 0. После прекращения приёма целых чисел (это происходит
+            // в случае если было введено 10 чисел, либо пользователь ввёл 0, чтобы не вводить все 10)
+            // подсчитать среднее значение целых положительных чисел кратных трём и вывести на консоль.
+
+            // Request no more than 10 positive integers from the user. The user can
+            // stop accepting numbers by entering 0. After stopping the reception of integers (this happens // if 10 integers have been entered or if the user has entered 0.
+            // in case if 10 integers were entered or if the user entered 0 not to enter all 10)
+            // calculate the average value of positive integers divisible by three and display it on the console.
+
+
+            Console.WriteLine("Enter up to 10 positive integers.");
+            Console.WriteLine("You can stop entering numbers by entering 0");
+
+            int[] nums = new int[10];
+            int i = 0;
+            int num;
+            int sum = 0;
+            int count = 0;
+            double avg;
+
+            do
+            {
+                num = int.Parse(Console.ReadLine());
+                nums[i] = num;
+                i++;
+                if (num == 0) break;
+            } while (i < nums.Length);
+
+            for (int j = 0; j < nums.Length; j++)
+            {
+
+                if (nums[j] % 3 == 0 && nums[j] > 0)
+                {
+                    sum += nums[j];
+                    count++;
+                }
+            }
+
+            avg = (double)sum / count;
+            Console.WriteLine("--------------");
+            Console.WriteLine($"The average of the entered numbers that are multiples of 3: {avg}");
+        }
+
+    }
+
+    
+}
